@@ -14,9 +14,7 @@ Summary: Adds i18n/l10n support to Flask applications
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/flask-babelex-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-babelex-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/flask-babelex-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/flask-babelex-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/flask-babelex-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/flask-babelex-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/flask-babelex-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/flask-babelex-feedstock)
 
 Current release info
 ====================
