@@ -1,20 +1,22 @@
-{% set name = "flask-babelex" %}
-{% set camelName = "Flask-BabelEx" %}
+{% set name = "Flask-BabelEx" %}
 {% set version = "0.9.3" %}
-{%set hash_type = "sha256" %}
-{% set hash_val = "cf79cdedb5ce860166120136b0e059e9d97b8df07a3bc2411f6243de04b754b4" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "cf79cdedb5ce860166120136b0e059e9d97b8df07a3bc2411f6243de04b754b4" %}
+{% set build = 1 %}
+
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
   noarch: python
-  number: 1
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
@@ -35,8 +37,11 @@ test:
 
 about:
   home: http://github.com/mrjoes/flask-babelex
+  license_fine: LICENSE
   license: BSD 3-Clause
+  license_family: BSD
   summary: 'Adds i18n/l10n support to Flask applications'
+  dev_url: http://github.com/mrjoes/flask-babelex
 
 extra:
   recipe-maintainers:
