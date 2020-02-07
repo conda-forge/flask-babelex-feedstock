@@ -1,29 +1,22 @@
-{% set name = "Flask-BabelEx" %}
-{% set version = "0.9.3" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "cf79cdedb5ce860166120136b0e059e9d97b8df07a3bc2411f6243de04b754b4" %}
-{% set build = 1 %}
+{% set version = "0.9.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: flask-babelex
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/F/Flask-BabelEx/Flask-BabelEx-{{ version }}.tar.gz
+  sha256: 39a59ccee9386a9d52d80b9101224402036aedc2c7873b11deef6e4e21cace27
 
 build:
+  number: 0
   noarch: python
-  number: {{ build }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   build:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
     - flask
@@ -37,8 +30,9 @@ test:
 
 about:
   home: http://github.com/mrjoes/flask-babelex
-  license_fine: LICENSE
-  license: BSD 3-Clause
+  license_file: LICENSE
+  license: BSD-3-Clause
+  license_file: LICENSE
   license_family: BSD
   summary: 'Adds i18n/l10n support to Flask applications'
   dev_url: http://github.com/mrjoes/flask-babelex
